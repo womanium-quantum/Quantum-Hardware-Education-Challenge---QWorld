@@ -1,5 +1,7 @@
 # Constantine Quantum Technologies' Topological Quantum Computing course
 
+This repository contains Constantine Quantum Technologies' submission to the Womanium Hackathon 2022.
+
 ## Team
 
 - Abdellah Tounsi
