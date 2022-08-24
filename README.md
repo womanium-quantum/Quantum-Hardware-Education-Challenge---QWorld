@@ -19,4 +19,4 @@ This course contains several notebooks introducing the reader to Topological Qua
 
 The notebooks contain reminders on the basics of Quantum Computing, introductions to Classical and Quantum Error Corrections, theoretical notions on Anyons, practical computations with Anyons along with exercices and quizzes, and a description of an approach to implementing Topological Qubits, namely, the Toric Code.
 
-Quizzes on the subject are to be found in the "" PDF file.
+Quizzes on the subject are to be found in the "Quiz_C" PDF file.
