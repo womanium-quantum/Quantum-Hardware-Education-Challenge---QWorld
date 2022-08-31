@@ -2,8 +2,7 @@ import numpy as np
 from IPython.display import display, Latex
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-import braiding_generators.fib_multi_qudits as fmq
-import braiding_generators.fib_qudit as fq
+import braiding_generators.fib_multi_qudits_ as fmq
 from copy import deepcopy
 
 class AnyonSimulator():
@@ -39,7 +38,7 @@ class AnyonSimulator():
             self._s.append(np.array(fmq.braiding_generator(index=ii, 
                                                             n_qudits=self.n_qubits,
                                                             qudit_len=self.n_anyons_per_qubit-1,
-                                                            show=False)[0]))
+                                                            show=False)))
         self._basis = fmq.find_basis(n_qudits=self.n_qubits,
                                       qudit_len=self.n_anyons_per_qubit-1)
         
