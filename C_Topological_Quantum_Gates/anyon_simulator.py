@@ -2,13 +2,22 @@ import numpy as np
 from IPython.display import display, Latex
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-import braiding_generators.fib_multi_qudits as fmq
-import braiding_generators.fib_qudit as fq
+import braiding_generators.fib_multi_qudits_ as fmq
 from copy import deepcopy
 
 class AnyonSimulator():
     
     def __init__(self, n_qubits=1, n_anyons_per_qubit=3):
+
+        if n_anyons_per_qubit == 3:
+            if n_qubits > 4:
+                raise ValueError("Number of qubits is limited to 4")
+        elif n_anyons_per_qubit == 4:
+            if n_qubits > 3:
+                raise ValueError("Number of qubits is limited to 3")
+        else:
+            raise ValueError("Number of anyons per qubit can be either 3 or 4")
+        
         self.n_qubits = n_qubits
         self.n_anyons_per_qubit = n_anyons_per_qubit
         self.braids = 0
@@ -39,7 +48,7 @@ class AnyonSimulator():
             self._s.append(np.array(fmq.braiding_generator(index=ii, 
                                                             n_qudits=self.n_qubits,
                                                             qudit_len=self.n_anyons_per_qubit-1,
-                                                            show=False)[0]))
+                                                            show=False)))
         self._basis = fmq.find_basis(n_qudits=self.n_qubits,
                                       qudit_len=self.n_anyons_per_qubit-1)
         
