@@ -8,6 +8,16 @@ from copy import deepcopy
 class AnyonSimulator():
     
     def __init__(self, n_qubits=1, n_anyons_per_qubit=3):
+
+        if n_anyons_per_qubit == 3:
+            if n_qubits > 4:
+                raise ValueError("Number of qubits is limited to 4")
+        elif n_anyons_per_qubit == 4:
+            if n_qubits > 3:
+                raise ValueError("Number of qubits is limited to 3")
+        else:
+            raise ValueError("Number of anyons per qubit can be either 3 or 4")
+        
         self.n_qubits = n_qubits
         self.n_anyons_per_qubit = n_anyons_per_qubit
         self.braids = 0
